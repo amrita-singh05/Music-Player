@@ -1,0 +1,333 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: Arial, sans-serif;
+
+    background: linear-gradient(
+        135deg,
+        #16001f,
+        #33004d,
+        #090014
+    );
+
+    padding: 20px;
+
+    transition: 0.4s;
+}
+
+.music-player {
+    width: 380px;
+    max-width: 100%;
+
+    padding: 25px;
+
+    border-radius: 28px;
+
+    background: rgba(255, 255, 255, 0.08);
+
+    backdrop-filter: blur(20px);
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+
+    box-shadow:
+        0 25px 60px rgba(0, 0, 0, 0.5);
+
+    color: white;
+}
+
+.top {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 25px;
+}
+
+.top span {
+    font-size: 12px;
+
+    letter-spacing: 3px;
+
+    color: #d8c5df;
+}
+
+#themeBtn {
+    width: 35px;
+    height: 35px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: rgba(255,255,255,0.1);
+
+    color: white;
+
+    cursor: pointer;
+
+    font-size: 18px;
+}
+
+.album {
+    display: flex;
+    justify-content: center;
+
+    margin-bottom: 25px;
+}
+
+.disc {
+    width: 210px;
+    height: 210px;
+
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 75px;
+
+    background:
+        radial-gradient(
+            circle,
+            #ffffff 0%,
+            #dddddd 3%,
+            #111111 4%,
+            #333333 15%,
+            #111111 16%,
+            #222222 100%
+        );
+
+    box-shadow:
+        0 15px 35px rgba(0,0,0,0.5);
+
+    transition: 0.4s;
+}
+
+.playing {
+    animation: rotate 5s linear infinite;
+}
+
+@keyframes rotate {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+.song-info {
+    text-align: center;
+
+    margin-bottom: 25px;
+}
+
+.song-info h1 {
+    font-size: 24px;
+
+    margin-bottom: 7px;
+}
+
+.song-info p {
+    color: #c7b5ce;
+
+    font-size: 14px;
+}
+
+.progress-container {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-bottom: 25px;
+}
+
+.progress-container span {
+    font-size: 11px;
+
+    color: #c7b5ce;
+
+    min-width: 32px;
+}
+
+input[type="range"] {
+    flex: 1;
+
+    height: 5px;
+
+    cursor: pointer;
+
+    accent-color: #d66cff;
+}
+
+.controls {
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 25px;
+
+    margin-bottom: 25px;
+}
+
+.controls button {
+    border: none;
+
+    background: transparent;
+
+    color: white;
+
+    font-size: 25px;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.controls button:hover {
+    transform: scale(1.15);
+}
+
+.controls .play {
+    width: 65px;
+    height: 65px;
+
+    border-radius: 50%;
+
+    background: #d66cff;
+
+    font-size: 25px;
+
+    box-shadow:
+        0 8px 25px rgba(214,108,255,0.4);
+}
+
+.volume-box {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-bottom: 25px;
+}
+
+.volume-box input {
+    flex: 1;
+}
+
+.playlist h2 {
+    font-size: 17px;
+
+    margin-bottom: 12px;
+}
+
+.song {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 12px;
+
+    margin-bottom: 8px;
+
+    border-radius: 12px;
+
+    background: rgba(255,255,255,0.06);
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.song:hover {
+    background: rgba(255,255,255,0.14);
+}
+
+.song.active {
+    background: rgba(214,108,255,0.25);
+}
+
+.song-name {
+    font-size: 14px;
+}
+
+.song-artist {
+    font-size: 11px;
+
+    color: #bcaac3;
+
+    margin-top: 3px;
+}
+
+.song-number {
+    color: #d66cff;
+}
+
+
+/* Light Mode */
+
+.light {
+    background:
+        linear-gradient(
+            135deg,
+            #f4e8ff,
+            #ffffff
+        );
+}
+
+.light .music-player {
+    background: rgba(255,255,255,0.7);
+
+    color: #222;
+}
+
+.light .controls button {
+    color: #222;
+}
+
+.light .top span,
+.light .song-info p,
+.light .progress-container span,
+.light .song-artist {
+    color: #666;
+}
+
+
+/* Mobile */
+
+@media (max-width: 450px) {
+
+    .music-player {
+        padding: 20px;
+    }
+
+    .disc {
+        width: 180px;
+        height: 180px;
+
+        font-size: 60px;
+    }
+
+}
